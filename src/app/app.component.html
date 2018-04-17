@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button [ngClass]="{'active-arrow':openNav,'inactive-arrow':!openNav}" (click)="openNavClick(); drawer.toggle();" class="menu">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <button mat-icon-button [ngClass]="{'active':!openNav,'inactive':openNav}" (click)="openNavClick(); drawer.toggle();" class="menu">
+      <mat-icon>reorder</mat-icon>
+    </button>
+    <span>Bugs</span>
+    <span class="example-spacer"></span>
+    <mat-icon class="example-icon">favorite</mat-icon>
+    <mat-icon class="example-icon">delete</mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-drawer-container class="main-container" autosize>
+  <mat-drawer #drawer class="right-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>  
+  <div class="main-content"></div>
+</mat-drawer-container>
