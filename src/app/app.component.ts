@@ -14,7 +14,7 @@ import {
 })
 
 export class AppComponent {
-  title = 'My app 2333';
+  title = 'My app 2';
 
   openNav = false;
 
